@@ -1,0 +1,15 @@
+AutoML/
+    main.py
+    preprocess.py
+    train.py
+    config_manual.py
+    utils/
+        __init__.py
+        data_handler.py
+    logs/
+        AutoML.log
+    output/
+    saved_models/
+        decision_tree_model.pkl
+    evaluations/
+    DirectoryStructure.txt

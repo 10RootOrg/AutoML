@@ -1,0 +1,113 @@
+# ==================================================
+# General Configuration (Shared between Automatic and Manual)
+# ==================================================
+
+# General
+SUPERVISED_GROUP_COLUMN_NAME = ""
+SUPERVISED_GROUP_COLUMN_INDEX = ""
+
+# Logger
+LOGGING_PATH = "D:\Downloads\AutoML_standalone\Results\logs\AutoML.log"
+
+# Train Input CSV
+TRAIN_CSV_FILE_PATH = "D:\Downloads\AutoML_standalone\Datasets\WineQuality\train.csv"
+
+# Preprocessing
+COLUMNS_TO_REMOVE_BY_INDEX = []
+COLUMNS_TO_REMOVE_BY_NAME = ["subject_name"]
+# Example for removing ID in any case r"(^|[^a-zA-Z0-9])id($|[^a-zA-Z0-9])"
+COLUMNS_TO_REMOVE_USING_REGEX = ""
+
+# Machine Learning
+SAVE_MODEL_FILE_PATH = "D:\Downloads\AutoML_standalone\Results\saved_models\model.pkl"
+LIMIT_CLUSTERS_NUMBER = 2
+
+# Debug Output
+MODEL_EVALUATIONS_FOLDER_PATH = "D:\Downloads\AutoML_standalone\Results\evaluations"
+PREPROCESSED_DATA_FILE_PATH = "D:\Downloads\AutoML_standalone\Results\evaluations\preprocessed_data.csv"
+
+# Prediction Output
+MODEL_PKL_FILE_PATH = "D:\Downloads\AutoML_standalone\Results\saved_models\model.pkl"
+PREDICT_CSV_FILE_PATH = "D:\Downloads\AutoML_standalone\Datasets\KeyStrokesClustering\dataset.csv"
+OUTPUT_FILE_PATH = "D:\Downloads\AutoML_standalone\Results\output\output.csv"
+
+# ==================================================
+# Automatic Training Configuration
+# ==================================================
+
+# Search Strategy Selection
+# Options: "GridSearchCV", "BayesianOptimization"
+# GridSearchCV: Exhaustive search, ideal for small datasets and few parameters, but very slow for large spaces.
+# BayesianOptimization: Probabilistic search, efficient for large datasets and complex parameter spaces, minimizes time with fewer evaluations.
+SEARCH_STRATEGY = "GridSearchCV"
+
+# Models to try in the automatic search
+# LightGBM/DecisionTree
+MODELS_TO_TRY = [
+    "LightGBM",
+    "DecisionTree"
+]
+
+# Time limits (in minutes)
+MAXIMUM_TIME_PER_MODEL = 5  # Maximum time allowed for each model's hyperparameter search
+
+# Best model selection criteria
+SCORING_METRIC = "accuracy"  # Metric to use for comparing models
+REFIT_BEST_MODEL = True     # Whether to refit the best model on the full dataset
+
+# GridSearch Specific Settings
+GRIDSEARCHCV_CV = 3
+GRIDSEARCHCV_SCORING = "accuracy"
+GRIDSEARCHCV_N_JOBS = -1
+GRIDSEARCHCV_VERBOSE = 0
+GRIDSEARCHCV_REFIT = True
+
+# Bayesian Optimization Settings
+BAYESIANOPT_N_ITER = 5
+BAYESIANOPT_N_INITIAL_POINTS = 5
+BAYESIANOPT_ACQUISITION_FUNCTION = "gp_hedge"
+BAYESIANOPT_RANDOM_STATE = 42
+BAYESIANOPT_N_JOBS = -1
+BAYESIANOPT_VERBOSE = 0
+
+# Parameter Grids for Automatic Search
+PARAM_GRID = {
+    "DecisionTree": {
+        "max_depth": [5, 10],
+        "min_samples_split": [2, 5],
+        "criterion": ["gini"]
+    },
+    "LightGBM": {
+        "num_leaves": [31],
+        "max_depth": [10, 15],
+        "learning_rate": [0.1],
+        "n_estimators": [100],
+        "subsample": [0.8]
+    }
+}
+
+# ==================================================
+# Manual Training Configuration
+# ==================================================
+
+# Mode Settings
+SUPERVISED_MODEL = False
+
+# Model Selection
+# Available models:
+# Supervised: Small dataset [1k rows] - DecisionTree / Big dataset [1k+] - LightGBM  
+# Unsupervised: DecisionTree/KMeans
+ML_MODEL_NAME = "KMeans"
+
+# Manual Hyperparameters
+## Decision Tree
+DECISION_TREE_MAX_DEPTH = None  # Default: None (unlimited depth)
+DECISION_TREE_MIN_SAMPLES_SPLIT = 2  # Default: 2
+DECISION_TREE_MIN_SAMPLES_LEAF = 1  # Default: 1
+DECISION_TREE_CRITERION = "gini"  # Options: "gini", "entropy"
+
+## LightGBM
+LIGHTGBM_NUM_LEAVES = 31  # Default: 31
+LIGHTGBM_MAX_DEPTH = -1  # Default: -1 (unlimited depth)
+LIGHTGBM_LEARNING_RATE = 0.1  # Default: 0.1
+LIGHTGBM_N_ESTIMATORS = 100  # Default: 100

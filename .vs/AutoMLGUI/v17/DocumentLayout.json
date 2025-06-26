@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|c:\\users\\nof\\desktop\\automlgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\helpers\\jsonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:helpers\\jsonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\runclusteringdecisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\runclusteringdecisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\helpers\\processhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:helpers\\processhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\runlightgbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\runlightgbm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\runkmean.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\runkmean.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\rungridsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\rungridsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\runclassificationdecisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\runclassificationdecisiontree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\runmodules\\runbayesianopt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:runmodules\\runbayesianopt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|C:\\Users\\Nof\\Desktop\\AutoMLGUI\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E771A68-D093-42AF-83AE-F27479BC5FD8}|AutoMLGUI.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProcessHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Helpers\\ProcessHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\ProcessHelper.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Helpers\\ProcessHelper.cs",
+              "RelativeToolTip": "Helpers\\ProcessHelper.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:58:25.383Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T08:35:32.421Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JsonHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Helpers\\JsonHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\JsonHelper.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Helpers\\JsonHelper.cs",
+              "RelativeToolTip": "Helpers\\JsonHelper.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAmwDwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T09:48:01.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RunClusteringDecisionTree.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunClusteringDecisionTree.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunClusteringDecisionTree.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunClusteringDecisionTree.cs",
+              "RelativeToolTip": "RunModules\\RunClusteringDecisionTree.cs",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAmwIoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T09:46:32.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RunKmean.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunKmean.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunKmean.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunKmean.cs",
+              "RelativeToolTip": "RunModules\\RunKmean.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAuwIYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T09:45:53.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RunBayesianOpt.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunBayesianOpt.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunBayesianOpt.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunBayesianOpt.cs",
+              "RelativeToolTip": "RunModules\\RunBayesianOpt.cs",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAwwKkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T09:37:41.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RunGridSearch.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunGridSearch.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunGridSearch.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunGridSearch.cs",
+              "RelativeToolTip": "RunModules\\RunGridSearch.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAqwLQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T09:20:54.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RunLightGBM.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunLightGBM.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunLightGBM.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunLightGBM.cs",
+              "RelativeToolTip": "RunModules\\RunLightGBM.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAowIsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T07:29:49.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RunClassificationDecisionTree.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunClassificationDecisionTree.cs",
+              "RelativeDocumentMoniker": "RunModules\\RunClassificationDecisionTree.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\RunModules\\RunClassificationDecisionTree.cs",
+              "RelativeToolTip": "RunModules\\RunClassificationDecisionTree.cs",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAqwJUAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T13:11:49.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Nof\\Desktop\\AutoMLGUI\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAqwKsAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T14:27:22.501Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

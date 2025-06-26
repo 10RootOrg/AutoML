@@ -1,0 +1,10 @@
+C:\Users\Nof\Desktop\AutoMLGUI\bin\Debug\AutoMLGUI.exe.config
+C:\Users\Nof\Desktop\AutoMLGUI\bin\Debug\AutoMLGUI.exe
+C:\Users\Nof\Desktop\AutoMLGUI\bin\Debug\AutoMLGUI.pdb
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.csproj.AssemblyReference.cache
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.Form1.resources
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.Properties.Resources.resources
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.csproj.GenerateResource.cache
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.csproj.CoreCompileInputs.cache
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.exe
+C:\Users\Nof\Desktop\AutoMLGUI\obj\Debug\AutoMLGUI.pdb

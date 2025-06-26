@@ -1,0 +1,111 @@
+{
+  // ==================================================
+  // General Configuration (Shared between Automatic and Manual)
+  // ==================================================
+
+  // General
+  "SUPERVISED_GROUP_COLUMN_NAME": "",
+  "SUPERVISED_GROUP_COLUMN_INDEX": "11",
+
+  // Logger
+  "LOGGING_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/logs/AutoML.log",
+
+  // Train Input CSV
+  "TRAIN_CSV_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Datasets/WineQuality/train.csv",
+
+  // Preprocessing
+  "COLUMNS_TO_REMOVE_BY_INDEX": [],
+  "COLUMNS_TO_REMOVE_BY_NAME": [],
+  // Example for removing ID in any case r"(^|[^a-zA-Z0-9])id($|[^a-zA-Z0-9])"
+  "COLUMNS_TO_REMOVE_USING_REGEX": "",
+
+  // Machine Learning
+  "SAVE_MODEL_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/saved_models/model.pkl",
+  "LIMIT_CLUSTERS_NUMBER": 2,
+
+  // Debug Output
+  "MODEL_EVALUATIONS_FOLDER_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/evaluations",
+  "PREPROCESSED_DATA_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/evaluations/preprocessed_data.csv",
+
+  // Prediction Output
+  "MODEL_PKL_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/saved_models/model.pkl",
+  "PREDICT_CSV_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Datasets/WineQuality/test.csv",
+  "OUTPUT_FILE_PATH": "C:/Users/Nof/Desktop/AutoML_standalone/Results/output/output.csv",
+
+  // Model hyperparameters with best practice defaults
+  "MODEL_HYPERPARAMETERS": { 
+      "DecisionTree": {
+        "max_depth": 10,  // Options: integers [3-20]
+        "min_samples_split": 2,  // Options: integers [2-20]
+        "min_samples_leaf": 1,  // Options: integers [1-10]
+        "criterion": "gini",  // Options: ["gini", "entropy"]
+        "splitter": "best",  // Options: ["best", "random"]
+        "max_features": "sqrt",  // Options: ["sqrt", "log2", null]
+        "min_impurity_decrease": 0.0,  // Options: [0.0-1.0]
+        "random_state": 42
+      },
+      "LightGBM": {
+        "num_leaves": 31,  // Options: integers [2-131072]
+        "max_depth": 6,  // Options: integers [-1, 1-15]
+        "learning_rate": 0.1,  // Options: [0.001-0.3]
+        "n_estimators": 100,  // Options: integers [10-1000]
+        "subsample": 0.8  // Options: [0.1-1.0]
+      },
+      "KMeans": {
+        "init": "k-means++",  // Options: ["k-means++", "random"]
+        "max_iter": 300,  // Options: integers [100-1000]
+        "tol": 1e-4  // Options: [1e-6-1e-2]
+      }
+  },
+
+  // ==================================================
+  // Automatic Training Configuration
+  // ==================================================
+
+  // Search Strategy Selection
+  // Options: "GridSearchCV", "BayesianOptimization"
+  // GridSearchCV: Exhaustive search, ideal for small datasets and few parameters
+  // BayesianOptimization: Probabilistic search, efficient for large datasets
+  "SEARCH_STRATEGY": "GridSearchCV",
+
+  // Models to try in the automatic search
+  // Recommendations:
+  // - Small datasets (<1000 rows): Use "DecisionTree"
+  // - Large datasets (1000+ rows): Use "LightGBM"
+  "MODELS_TO_TRY": [
+    "LightGBM",
+    "DecisionTree"
+  ],
+
+  // Time limits (in minutes)
+  "MAXIMUM_TIME_PER_MODEL": 5,
+
+
+
+  // GridSearch Specific Settings
+  "SCORING_METRIC": "accuracy",  // Options: ["accuracy", "f1", "precision", "recall", "roc_auc"]
+  "REFIT_BEST_MODEL": true,
+  "GRIDSEARCHCV_CV": 5,  // Options: integers [3-10]
+  "GRIDSEARCHCV_N_JOBS": -1,  // Options: [-1, positive integers]
+  "GRIDSEARCHCV_VERBOSE": 1,  // Options: [0, 1, 2]
+
+  // Bayesian Optimization Settings
+  "BAYESIANOPT_N_ITER": 50,  // Options: integers [10-100]
+  "BAYESIANOPT_N_INITIAL_POINTS": 5,  // Options: integers [3-10]
+  "BAYESIANOPT_ACQUISITION_FUNCTION": "gp_hedge",  // Options: ["gp_hedge", "ei", "pi", "ucb"]
+  "BAYESIANOPT_RANDOM_STATE": 42,
+  "BAYESIANOPT_N_JOBS": -1,  // Options: [-1, positive integers]
+  "BAYESIANOPT_VERBOSE": 1,  // Options: [0, 1, 2]
+
+  // ==================================================
+  // Manual Training Configuration
+  // ==================================================
+
+  // Mode Settings
+  "SUPERVISED_MODEL": true,
+
+  // Available models:
+  // Supervised: Small dataset [1k rows] - DecisionTree / Big dataset [1k+] - LightGBM  
+  // Unsupervised: DecisionTree/KMeans
+  "ML_MODEL_NAME": "LightGBM"
+}
