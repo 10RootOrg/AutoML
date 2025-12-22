@@ -190,7 +190,8 @@ namespace AutoMLGUI
 
         private void FixLoadObjects()
         {
-            clusterInputFileTextBox.Text = classificationPredictInputFileTextBox.Text;
+            // Input files are independent - clustering uses CLUSTERING_INPUT_FILE_PATH, classification uses PREDICT_CSV_FILE_PATH
+            // Only sync output files
             classificationPredictOutputFileTextBox.Text = clusterOutputFileTextBox.Text;
             classificationPredictPKLFileTextBox.Text = classificationTrainPKLOutputTextBox.Text;
         }

@@ -4,10 +4,10 @@
   "LOGGING_PATH": "Results/logs/app.log",
   "TRAIN_CSV_FILE_PATH": "Datasets/WineQuality/train.csv",
   "COLUMNS_TO_REMOVE_BY_INDEX": [],
-  "COLUMNS_TO_REMOVE_BY_NAME": "",
+  "COLUMNS_TO_REMOVE_BY_NAME": "type",
   "COLUMNS_TO_REMOVE_USING_REGEX": "",
   "SAVE_MODEL_FILE_PATH": "Results/saved_models/model.pkl",
-  "LIMIT_CLUSTERS_NUMBER": 7,
+  "LIMIT_CLUSTERS_NUMBER": "7",
   "MODEL_EVALUATIONS_FOLDER_PATH": "Results/evaluations",
   "PREPROCESSED_DATA_FILE_PATH": "Results/evaluations/preprocessed_data.csv",
   "MODEL_PKL_FILE_PATH": "Results/saved_models/model.pkl",
@@ -55,6 +55,6 @@
   "BAYESIANOPT_RANDOM_STATE": 42,
   "BAYESIANOPT_N_JOBS": -1,
   "BAYESIANOPT_VERBOSE": "0",
-  "SUPERVISED_MODEL": false,
-  "ML_MODEL_NAME": "DecisionTree"
+  "SUPERVISED_MODEL": true,
+  "ML_MODEL_NAME": "BayesianOpt"
 }

@@ -20,7 +20,7 @@ namespace AutoMLGUI.RunModules
                     { "TRAIN_CSV_FILE_PATH", "classificationTrainInputTextBox" },
                     { "OUTPUT_FILE_PATH", "outputFileTextBox" },
                     { "MODEL_PKL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
-                    { "PREDICT_CSV_FILE_PATH", "predictCsvFilePathTextBox" },
+                    { "PREDICT_CSV_FILE_PATH", "classificationPredictInputFileTextBox" },
 
                     // 🔹 Model Selection
                     { "ML_MODEL_NAME", "modelComboBox" },
