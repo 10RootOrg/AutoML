@@ -105,7 +105,19 @@ The AutoML GUI is organized into clear sections for step-by-step configuration.
 - Can make predictions on new data
 
 ---
+## 📹 Video Tutorials
 
+### Getting Started with AutoML GUI
+
+Learn how to use AutoML GUI with these video tutorials:
+
+**Clustering Tutorial**  
+[![AutoML GUI - Clustering Analysis](https://img.youtube.com/vi/-M65uZplm6w/0.jpg)](https://www.youtube.com/watch?v=-M65uZplm6w)
+
+**Classification Tutorial**  
+[![AutoML GUI - Classification Tasks](https://img.youtube.com/vi/YFCeODcd9lY/0.jpg)](https://www.youtube.com/watch?v=YFCeODcd9lY)
+
+---
 ## Clustering Analysis
 
 Clustering is useful for discovering natural groups in your data, such as customer segments or measurement patterns.
@@ -528,3 +540,4 @@ Contributions are welcome! Please ensure all changes maintain compatibility with
 ## Support
 
 For questions, issues, or feature requests, please refer to the troubleshooting section or contact support.
+
