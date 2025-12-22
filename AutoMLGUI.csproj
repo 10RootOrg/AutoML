@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="Helpers\ControlMapHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
     <Compile Include="Helpers\ProcessHelper.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Program.cs" />

@@ -1,4 +1,4 @@
-﻿using AutoMLGUI.Helpers;
+using AutoMLGUI.Helpers;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -13,23 +13,24 @@ namespace AutoMLGUI.RunModules
         {
             var configToGuiMap = new Dictionary<string, string>
                 {
-                    // 🔹 General Settings
+                    // General Settings
                     { "LOGGING_PATH", "loggerTextBox" },
                     { "OUTPUT_FILE_PATH", "clusterOutputFileTextBox" },
-                    { "MODEL_PKL_FILE_PATH", "saveModelFilePathTextBox" },
-                    { "PREDICT_CSV_FILE_PATH", "clusterInputFileTextBox" },
+                    { "MODEL_PKL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
+                    { "SAVE_MODEL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
+                    { "CLUSTERING_INPUT_FILE_PATH", "clusterInputFileTextBox" },
 
-                    // 🔹 Model Selection
+                    // Model Selection
                     { "ML_MODEL_NAME", "modelComboBox" },
 
-                    // 🔹 Clustering Options
+                    // Clustering Options
                     { "LIMIT_CLUSTERS_NUMBER", "clustersNumberTextBox" },
 
-                    // 🔹 Evaluation and Preprocessing
+                    // Evaluation and Preprocessing
                     { "MODEL_EVALUATIONS_FOLDER_PATH", "evaluationsTextBox" },
                     { "PREPROCESSED_DATA_FILE_PATH", "preprocessedDataFileTextBox" },
 
-                    // 🔹 Decision Tree Hyperparameters
+                    // Decision Tree Hyperparameters
                     { "MODEL_HYPERPARAMETERS.DecisionTree.max_depth", "decisionTreeMaxDepthTextBox" },
                     { "MODEL_HYPERPARAMETERS.DecisionTree.min_samples_split", "decisionTreeMinSamplesSplitTextBox" },
                     { "MODEL_HYPERPARAMETERS.DecisionTree.min_samples_leaf", "decisionTreeMinSamplesLeafTextBox" },
@@ -57,7 +58,7 @@ namespace AutoMLGUI.RunModules
                     !(maxDepthControl is TextBox maxDepthTextBox) ||
                     !int.TryParse(maxDepthTextBox.Text, out _))
                 {
-                    MessageBox.Show("❌ Validation failed: Max Depth is invalid!");
+                    MessageBox.Show("Validation failed: Max Depth is invalid!");
                     return false;
                 }
 
@@ -65,29 +66,29 @@ namespace AutoMLGUI.RunModules
                     !(minSamplesSplitControl is TextBox minSamplesSplitTextBox) ||
                     !int.TryParse(minSamplesSplitTextBox.Text, out _))
                 {
-                    MessageBox.Show("❌ Validation failed: Min Samples Split is invalid!");
+                    MessageBox.Show("Validation failed: Min Samples Split is invalid!");
                     return false;
                 }
 
                 if (!controlMap.TryGetValue("decisionTreeMinSamplesLeafTextBox", out Control minSamplesLeafControl) ||
                     !(minSamplesLeafControl is TextBox minSamplesLeafTextBox))
                 {
-                    MessageBox.Show("❌ Min Samples Leaf text box not found in controlMap!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Min Samples Leaf text box not found in controlMap!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
                 string minSamplesLeafValue = minSamplesLeafTextBox.Text;
                 if (!int.TryParse(minSamplesLeafValue, out _))
                 {
-                    MessageBox.Show($"❌ Validation failed: Min Samples Leaf is invalid! Value: {minSamplesLeafValue}");
+                    MessageBox.Show($"Validation failed: Min Samples Leaf is invalid! Value: {minSamplesLeafValue}");
                     return false;
                 }
 
-                return true; // ✅ All validations passed
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"🚨 Unexpected Error in ValidateForm: {ex.Message}");
+                MessageBox.Show($"Unexpected Error in ValidateForm: {ex.Message}");
                 return false;
             }
         }
@@ -111,7 +112,7 @@ namespace AutoMLGUI.RunModules
                     {
                         if (int.TryParse(textBox.Text, out int intValue))
                         {
-                            newValue = intValue; // ✅ Convert to integer if applicable
+                            newValue = intValue;
                         }
                         else
                         {
@@ -124,7 +125,7 @@ namespace AutoMLGUI.RunModules
                     }
                     else if (control is CheckBox checkBox)
                     {
-                        newValue = checkBox.Checked; // ✅ Store as Boolean
+                        newValue = checkBox.Checked;
                     }
 
                     if (newValue != null)
@@ -135,12 +136,17 @@ namespace AutoMLGUI.RunModules
 
                 JsonHelper.ConfigChoosenOptions(controlMap, config);
 
+                // Copy clustering input to PREDICT_CSV_FILE_PATH for Python compatibility
+                if (config["CLUSTERING_INPUT_FILE_PATH"] != null)
+                {
+                    config["PREDICT_CSV_FILE_PATH"] = config["CLUSTERING_INPUT_FILE_PATH"];
+                }
 
                 JsonHelper.SaveJsonConfig(config);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"🚨 Error updating config: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error updating config: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

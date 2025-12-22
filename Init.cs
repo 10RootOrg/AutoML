@@ -27,7 +27,8 @@ namespace AutoMLGUI
                     { "OUTPUT_FILE_PATH", "clusterOutputFileTextBox" },
                     { "MODEL_PKL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
                     { "PREDICT_CSV_FILE_PATH", "classificationPredictInputFileTextBox" },
-                    // 🔹 Model Selection
+                    { "CLUSTERING_INPUT_FILE_PATH", "clusterInputFileTextBox" },
+                    // Model Selection
                     { "ML_MODEL_NAME", "modelComboBox" },
 
                     // 🔹 Clustering Options

@@ -1,4 +1,4 @@
-﻿using AutoMLGUI.Helpers;
+using AutoMLGUI.Helpers;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,24 +14,24 @@ namespace AutoMLGUI.RunModules
         {
             var configToGuiMap = new Dictionary<string, string>
 {
-    // 🔹 General Settings
+    // General Settings
     { "LOGGING_PATH", "loggerTextBox" },
     { "OUTPUT_FILE_PATH", "clusterOutputFileTextBox" },
-    { "MODEL_PKL_FILE_PATH", "saveModelFilePathTextBox" },
-    { "PREDICT_CSV_FILE_PATH", "clusterInputFileTextBox" },
+    { "MODEL_PKL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
+    { "SAVE_MODEL_FILE_PATH", "classificationTrainPKLOutputTextBox" },
+    { "CLUSTERING_INPUT_FILE_PATH", "clusterInputFileTextBox" },
 
-    // 🔹 Model Selection
+    // Model Selection
     { "ML_MODEL_NAME", "modelComboBox" },
 
-    // 🔹 Clustering Options
+    // Clustering Options
     { "LIMIT_CLUSTERS_NUMBER", "clustersNumberTextBox" },
 
-    // 🔹 Evaluation and Preprocessing
+    // Evaluation and Preprocessing
     { "MODEL_EVALUATIONS_FOLDER_PATH", "evaluationsTextBox" },
     { "PREPROCESSED_DATA_FILE_PATH", "preprocessedDataFileTextBox" },
 
-    // 🔹 Supervised Learning
-    // 🔹 KMeans Hyperparameters
+    // KMeans Hyperparameters
     { "MODEL_HYPERPARAMETERS.KMeans.init", "kmeansInitComboBox" },
     { "MODEL_HYPERPARAMETERS.KMeans.max_iter", "kmeansMaxIterTextBox" },
     { "MODEL_HYPERPARAMETERS.KMeans.tol", "kmeansTolComboBox" },
@@ -50,47 +50,42 @@ namespace AutoMLGUI.RunModules
         {
             try
             {
-                //MessageBox.Show("🔍 Running ValidateForm...");
-
                 if (!controlMap.TryGetValue("clustersNumberTextBox", out Control clustersNumberControl) ||
                     !(clustersNumberControl is TextBox clustersNumberTextBox) ||
                     !int.TryParse(clustersNumberTextBox.Text, out _))
                 {
-                    MessageBox.Show("❌ Validation failed: Clusters Number is invalid!");
                     MessageBox.Show("Clusters Number must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
-                //MessageBox.Show("✅ Clusters Number Valid");
-
                 if (!controlMap.TryGetValue("clusterInputFileTextBox", out Control inputFileControl) ||
                     !(inputFileControl is TextBox clusterInputFileTextBox) ||
-                    string.IsNullOrWhiteSpace(clusterInputFileTextBox.Text) ||
-                    !File.Exists(clusterInputFileTextBox.Text))
+                    string.IsNullOrWhiteSpace(clusterInputFileTextBox.Text))
                 {
-                    MessageBox.Show("❌ Validation failed: Input file does not exist!");
-                    MessageBox.Show("Input file path is invalid or does not exist.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Input file path is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
-                //MessageBox.Show("✅ Input File Path Valid");
-                //MessageBox.Show(controlMap["outputFileTextBox"].Text);
+                // Resolve relative paths to absolute for file existence check
+                string inputFilePath = PathHelper.ToAbsolutePath(clusterInputFileTextBox.Text);
+                if (!File.Exists(inputFilePath))
+                {
+                    MessageBox.Show($"Input file does not exist: {inputFilePath}", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
                 if (!controlMap.TryGetValue("clusterOutputFileTextBox", out Control outputFileControl) ||
                     !(outputFileControl is TextBox clusterOutputFileTextBox) ||
                     string.IsNullOrWhiteSpace(clusterOutputFileTextBox.Text))
                 {
-                    MessageBox.Show("❌ Validation failed: Output folder is missing!");
                     MessageBox.Show("Output folder path is invalid or does not exist.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
-                //MessageBox.Show("✅ Output File Path Valid");
-
-                return true; // ✅ All validations passed
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"🚨 Unexpected Error in ValidateForm: {ex.Message}");
                 MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -100,14 +95,13 @@ namespace AutoMLGUI.RunModules
         {
             try
             {
-                // 🔄 Loop through all mappings and update config with UI values
                 foreach (var kvp in configToGuiMap)
                 {
                     string jsonKey = kvp.Key;
                     string controlName = kvp.Value;
 
                     if (!controlMap.TryGetValue(controlName, out Control control) || control == null)
-                        continue; // Skip if control not found
+                        continue;
 
                     object newValue = null;
 
@@ -121,23 +115,28 @@ namespace AutoMLGUI.RunModules
                     }
                     else if (control is CheckBox checkBox)
                     {
-                        newValue = checkBox.Checked; // ✅ Store as Boolean
+                        newValue = checkBox.Checked;
                     }
 
                     if (newValue != null)
                     {
-                        // ✅ Update JSON value using JsonHelper
                         JsonHelper.UpdateJsonValue(config, jsonKey, newValue);
                     }
                 }
 
                 JsonHelper.ConfigChoosenOptions(controlMap, config);
 
+                // Copy clustering input to PREDICT_CSV_FILE_PATH for Python compatibility
+                if (config["CLUSTERING_INPUT_FILE_PATH"] != null)
+                {
+                    config["PREDICT_CSV_FILE_PATH"] = config["CLUSTERING_INPUT_FILE_PATH"];
+                }
+
                 JsonHelper.SaveJsonConfig(config);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"🚨 Error updating config: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error updating config: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

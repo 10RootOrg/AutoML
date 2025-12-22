@@ -1,23 +1,24 @@
 {
   "SUPERVISED_GROUP_COLUMN_NAME": "",
-  "SUPERVISED_GROUP_COLUMN_INDEX": "11",
-  "LOGGING_PATH": "C:/AutoMLGUI/AutoML/Results/logs/AutoML.log",
-  "TRAIN_CSV_FILE_PATH": "C:/AutoMLGUI/AutoML/Datasets/WineQuality/train.csv",
+  "SUPERVISED_GROUP_COLUMN_INDEX": 11,
+  "LOGGING_PATH": "Results/logs/app.log",
+  "TRAIN_CSV_FILE_PATH": "Datasets/WineQuality/train.csv",
   "COLUMNS_TO_REMOVE_BY_INDEX": [],
   "COLUMNS_TO_REMOVE_BY_NAME": "",
   "COLUMNS_TO_REMOVE_USING_REGEX": "",
-  "SAVE_MODEL_FILE_PATH": "C:/AutoMLGUI/AutoML/Results/saved_models/model.pkl",
-  "LIMIT_CLUSTERS_NUMBER": "2",
-  "MODEL_EVALUATIONS_FOLDER_PATH": "C:/AutoMLGUI/AutoML/Results/evaluations",
-  "PREPROCESSED_DATA_FILE_PATH": "C:/AutoMLGUI/AutoML/Results/evaluations/preprocessed_data.csv",
-  "MODEL_PKL_FILE_PATH": "C:/AutoMLGUI/AutoML/Results/saved_models/model.pkl",
-  "PREDICT_CSV_FILE_PATH": "C:/AutoMLGUI/AutoML/Datasets/WineQuality/test.csv",
-  "OUTPUT_FILE_PATH": "C:/AutoMLGUI/AutoML/Results/output/output.csv",
+  "SAVE_MODEL_FILE_PATH": "Results/saved_models/model.pkl",
+  "LIMIT_CLUSTERS_NUMBER": 7,
+  "MODEL_EVALUATIONS_FOLDER_PATH": "Results/evaluations",
+  "PREPROCESSED_DATA_FILE_PATH": "Results/evaluations/preprocessed_data.csv",
+  "MODEL_PKL_FILE_PATH": "Results/saved_models/model.pkl",
+  "PREDICT_CSV_FILE_PATH": "Datasets/WineQuality/test.csv",
+  "CLUSTERING_INPUT_FILE_PATH": "Datasets/Zoo/zoo.csv",
+  "OUTPUT_FILE_PATH": "Results/output.csv",
   "MODEL_HYPERPARAMETERS": {
     "DecisionTree": {
       "max_depth": 10,
       "min_samples_split": 2,
-      "min_samples_leaf": 1,
+      "min_samples_leaf": 3,
       "criterion": "gini",
       "splitter": "best",
       "max_features": "sqrt",
@@ -55,5 +56,5 @@
   "BAYESIANOPT_N_JOBS": -1,
   "BAYESIANOPT_VERBOSE": "0",
   "SUPERVISED_MODEL": false,
-  "ML_MODEL_NAME": "KMeans"
+  "ML_MODEL_NAME": "DecisionTree"
 }
